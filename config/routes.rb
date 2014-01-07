@@ -1,9 +1,11 @@
 Elist::Application.routes.draw do
 
   resources :users
+  resources :lists
 
   root  'static_pages#home'
-  match '/newuser',  to: 'users#new',            via: 'get'
+  match '/newuser',  to: 'users#new', via: 'get'
+  match '/newlist',  to: 'lists#new', via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
