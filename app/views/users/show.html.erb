@@ -1,0 +1,6 @@
+<% provide(:title, 'User information') %>
+<h1>User Information</h1>
+<%= link_to "edit", edit_user_path, class: "small" %>
+<h3> <%= @user.name %></h3>
+
+ <%= @user.email %>

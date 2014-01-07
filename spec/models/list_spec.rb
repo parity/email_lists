@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe List do
-  before {@list = List.new(name:"Devs", address:"devs@example.com", description:"list for devs")}
+  before {@list = List.new(name:"devs", address:"devs@example.com", description:"list for devs")}
 
   subject { @list }
 

@@ -1,4 +1,6 @@
 class List < ActiveRecord::Base
+	has_many :subscriptions, dependent: :destroy
+	has_many :users, :through => :subscriptions
 	before_save { name.downcase! }
 	before_save { address.downcase! }
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
