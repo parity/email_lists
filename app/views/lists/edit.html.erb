@@ -1,0 +1,23 @@
+<% provide(:title, 'Edit List') %>
+<h1>Edit List</h1>
+
+   <%= form_for @list, html: { role: "form"} do |f| %>
+      <%= render 'shared/error_messages_list' %>
+
+      <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control"  %>
+      </div>
+
+      <div class="form-group">
+      <%= f.label :description %>
+      <%= f.text_field :description, class: "form-control"  %>
+      </div>
+
+      <div class="form-group">
+      <%= f.label :address %>
+      <%= f.text_field :address, class: "form-control" %>
+      </div>
+
+      <%= f.submit "Edit List", class: "btn btn-large btn-primary" %>
+    <% end %>
