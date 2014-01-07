@@ -35,6 +35,12 @@ class UsersController < ApplicationController
 		@users =User.paginate(page: params[:page])
 	end
 
+	def destroy
+	    User.find(params[:id]).destroy
+	    flash[:success] = "User deleted. Say Goodbye!"
+	    redirect_to users_url
+  	end
+
 	private
 
 		def user_params
