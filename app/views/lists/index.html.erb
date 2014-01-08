@@ -1,0 +1,17 @@
+<%= provide(:title,"All Lists") %>
+<h1>All Lists </h1>
+
+<%= will_paginate %>
+<ol>
+	<% @lists.each do |list| %>
+		<li>
+		<%= link_to list.name, list %> (<%= list.description %>)
+		<%= link_to "delete", list,class: "text-danger", method: :delete,
+                                  data: { confirm: "You sure?" } %>
+		</li>
+	<% end %>	
+</ol>
+
+<%= will_paginate %>
+
+

@@ -31,6 +31,16 @@ class ListsController < ApplicationController
 		end
 	end
 
+	def index
+		@lists =List.paginate(page: params[:page])
+	end
+
+	def destroy
+	    List.find(params[:id]).destroy
+	    flash[:success] = "List deleted. Say Goodbye!"
+	    redirect_to lists_url
+  	end
+
 	private
 
 		def list_params
