@@ -1,0 +1,16 @@
+<%= provide(:title, 'All Subscriptions') %>
+<h1>All Subscriptions</h1>
+
+<%= will_paginate %>
+
+<ol>
+	<% @subscriptions.each do |subscription| %>
+		<li>
+		<%= link_to subscription.user_id , subscription %>
+		<%= link_to "delete", subscription,class: "text-danger", method: :delete,
+                                  data: { confirm: "You sure?" } %>
+		</li>
+	<% end %>	
+</ol>
+
+<%= will_paginate%>

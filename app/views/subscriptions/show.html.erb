@@ -1,0 +1,9 @@
+<% provide(:title, 'Subscription information') %>
+<h1>Subscription Information</h1>
+<%= link_to "edit", edit_subscription_path, class: "text-success" %>
+<%= link_to "delete", subscription_path, class: "text-danger", method: :delete,
+                                  data: { confirm: "You sure?" } %>
+
+<h3> <%= @subscription.user_id %></h3>
+
+ <%= @subscription.list_id %> 
