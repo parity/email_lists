@@ -4,6 +4,6 @@
 <%= link_to "delete", subscription_path, class: "text-danger", method: :delete,
                                   data: { confirm: "You sure?" } %>
 
-<h3> <%= @subscription.user_id %></h3>
+<h3> <small>user</small> <%= User.find(@subscription.user_id).name %></h3>
 
- <%= @subscription.list_id %> 
+ <small>list</small> <%= List.find(@subscription.list_id).name %> (<%= List.find(@subscription.list_id).description %>)
