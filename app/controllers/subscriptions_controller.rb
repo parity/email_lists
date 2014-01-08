@@ -23,6 +23,12 @@ class SubscriptionsController < ApplicationController
 		@subscriptions = Subscription.paginate(page: params[:page])
 	end
 
+	def destroy
+	    Subscription.find(params[:id]).destroy
+	    flash[:success] = "Subscription deleted. Say Goodbye!"
+	    redirect_to subscriptions_url
+  	end
+
 	private
 
 		def subscription_params

@@ -38,6 +38,7 @@ class ListsController < ApplicationController
 	def destroy
 	    List.find(params[:id]).destroy
 	    flash[:success] = "List deleted. Say Goodbye!"
+	    flash[:warning] = "Subcriptions to this list are gone too."
 	    redirect_to lists_url
   	end
 

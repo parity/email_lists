@@ -38,6 +38,7 @@ class UsersController < ApplicationController
 	def destroy
 	    User.find(params[:id]).destroy
 	    flash[:success] = "User deleted. Say Goodbye!"
+	    flash[:alert] = "Subcriptions of this user are gone too."
 	    redirect_to users_url
   	end
 
