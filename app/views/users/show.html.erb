@@ -7,3 +7,13 @@
 <h3> <%= @user.name %></h3>
 
  <%= @user.email %>
+
+ <h3><small><%= @user.subscriptions.count %></small>Subscriptions </h3>
+
+ <ol>
+	<% @user.subscriptions.each do |subscription| %>
+		<li>
+		<%=  List.find(subscription.list_id).name %>
+		</li>
+	<% end %>	
+</ol>
