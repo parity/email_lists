@@ -59,7 +59,19 @@ describe "List pages" do
 
 	end
 
+	describe "list detail page" do
+		let(:subscription) {FactoryGirl.create(:subscription)}
+		let(:list) {subscription.list}
+		before { visit list_path(list)}
 
+		describe "have right content" do
+			it {should have_content("Subscribers")}
+			#it {should_not have_content(subscription.count)}
+			#:subscription.users.each do |user| 
+			#	it {should have_content(User.find(user.id()))}
+			#end
+		end
+	end
 end
 
 

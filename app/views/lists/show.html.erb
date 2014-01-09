@@ -8,3 +8,13 @@
 
  <%= @list.description %>,
  <%= @list.address %>
+
+ <h3> <small><%= @list.users.count %></small>Subscribers</h3>
+
+ <ol>
+	<% @list.subscriptions.each do |subscription| %>
+		<li>
+		<%=  User.find(subscription.user_id).name %>
+		</li>
+	<% end %>	
+</ol>
