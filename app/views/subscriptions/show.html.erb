@@ -1,9 +1,10 @@
 <% provide(:title, 'Subscription information') %>
 <h1>Subscription Information</h1>
-<%= link_to "edit", edit_subscription_path, class: "text-success" %>
+<!--<%= link_to "edit", edit_subscription_path, class: "text-success" %> -->
 <%= link_to "delete", subscription_path, class: "text-danger", method: :delete,
                                   data: { confirm: "You sure?" } %>
 
 <h3> <small>user</small> <%= User.find(@subscription.user_id).name %></h3>
-
- <small>list</small> <%= List.find(@subscription.list_id).name %> (<%= List.find(@subscription.list_id).description %>)
+is subscribed to
+<h3><small>list</small> <%= List.find(@subscription.list_id).name %> </h3>
+(<%= List.find(@subscription.list_id).description %>)
