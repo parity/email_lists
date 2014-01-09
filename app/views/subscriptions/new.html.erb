@@ -6,13 +6,13 @@
 
       <div class="form-group">
       <%= f.label :user_id %>
-      <% options = options_from_collection_for_select(@users, 'id', 'name') %>
+      <% options = options_from_collection_for_select(@users.order("name ASC"), 'id', 'name') %>
 	  <%= f.select :user_id,  options %>
       </div>
 
       <div class="form-group">
       <%= f.label :list_id %>
-      <% options = options_from_collection_for_select(@lists, 'id', 'name') %>
+      <% options = options_from_collection_for_select(@lists.order("name ASC"), 'id', 'name') %>
 	  <%= f.select :list_id,  options %>
       </div>
 

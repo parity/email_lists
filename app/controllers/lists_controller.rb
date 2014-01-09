@@ -32,7 +32,7 @@ class ListsController < ApplicationController
 	end
 
 	def index
-		@lists =List.paginate(page: params[:page])
+		@lists =List.paginate(page: params[:page]).order("name ASC")
 	end
 
 	def destroy

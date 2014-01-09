@@ -20,7 +20,7 @@ class SubscriptionsController < ApplicationController
 	end
 
 	def index
-		@subscriptions = Subscription.paginate(page: params[:page])
+		@subscriptions = Subscription.paginate(page: params[:page]).order("user_id ASC")
 	end
 
 	def destroy
