@@ -58,3 +58,6 @@ end
 gem 'therubyracer'
 gem 'execjs'
 gem 'rake'
+
+# for ENV
+gem 'figaro'
