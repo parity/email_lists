@@ -23,4 +23,8 @@ module ApplicationHelper
     end
     nil
   end
+
+  def logged_in?
+    not request.authorization.nil?
+  end
 end
