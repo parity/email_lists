@@ -59,5 +59,5 @@ gem 'therubyracer'
 gem 'execjs'
 gem 'rake'
 
-# for ENV
+# for ENV variables
 gem 'figaro'
