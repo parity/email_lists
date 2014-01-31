@@ -1,4 +1,6 @@
 class SubscriptionsController < ApplicationController
+	before_filter :authenticate
+	
 	def new
    		@subscription = Subscription.new
    		@users = User.all
