@@ -3,6 +3,7 @@
 require "bundler/capistrano"
 
 server "178.79.140.23", :web, :app, :db, primary: true
+ssh_options[:port] = 15001
 
 set :application, "elist"
 set :user, "hovancik"

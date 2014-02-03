@@ -1,0 +1,9 @@
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: elist_production
+  pool: 5
+  host: localhost
+  username: elist_production
+  password: secret
+

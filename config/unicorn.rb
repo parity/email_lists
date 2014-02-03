@@ -1,9 +1,9 @@
-root = "/home/hovancik/apps/blog/current"
+root = "/home/hovancik/apps/elist/current"
 working_directory root
 pid "#{root}/tmp/pids/unicorn.pid"
 stderr_path "#{root}/log/unicorn.log"
 stdout_path "#{root}/log/unicorn.log"
 
-listen "/tmp/unicorn.blog.sock"
+listen "/tmp/unicorn.elist.sock"
 worker_processes 2
 timeout 30
