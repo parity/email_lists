@@ -65,9 +65,3 @@ gem 'rake'
 
 # for ENV variables
 gem 'figaro'
-
-
-
-
-
-
