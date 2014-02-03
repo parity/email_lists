@@ -13,6 +13,8 @@ gem 'griddler'
 group :development, :test do
   gem 'sqlite3', '1.3.8'
   gem 'rspec-rails', '2.13.1'
+  # Deploy with Capistrano
+  gem 'capistrano' , '2.15.5'
   # The following optional lines are part of the advanced setup.
   # gem 'guard-rspec', '2.5.0'
   # gem 'spork-rails', '4.0.0'
@@ -53,6 +55,8 @@ end
 group :production do
   gem 'pg', '0.15.1'
   gem 'rails_12factor', '0.0.2'
+  # Use unicorn as the app server
+  gem 'unicorn'
 end
 
 gem 'therubyracer'
@@ -61,4 +65,9 @@ gem 'rake'
 
 # for ENV variables
 gem 'figaro'
+
+
+
+
+
 
