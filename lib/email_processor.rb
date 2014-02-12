@@ -13,7 +13,7 @@ class EmailProcessor
     			@to<<user.email 
     		end
    	end	
-   	MyMailer.send_email(email.from,@to,email.subject,email.body,email.attachments).deliver 
+   	MyMailer.send_email(email.from,@to,email.subject,email.raw_text,email.attachments).deliver 
    end	
   end	
 end
