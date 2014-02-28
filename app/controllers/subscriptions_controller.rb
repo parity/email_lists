@@ -8,13 +8,21 @@ class SubscriptionsController < ApplicationController
  	end
 
  	def create
-		@subscription = Subscription.new(subscription_params)
-		if @subscription.save
-			flash[:success] = "New Subscription created, hence the Subscription Information."
-			redirect_to @subscription
-		else
-			render 'new'
-		end
+
+ 		begin
+ 			@subscription = Subscription.new(subscription_params)
+			if @subscription.save
+				flash[:success] = "New Subscription created, hence the Subscription Information."
+				redirect_to @subscription
+			end
+ 			
+ 		rescue Exception => e
+ 			@subscriptions = Subscription.paginate(page: params[:page]).order("user_id ASC")
+ 			flash[:error] = e.message
+ 			render 'index' 			
+ 		end
+
+		
 	end
 
 	def show
