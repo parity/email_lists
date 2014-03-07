@@ -11,13 +11,14 @@ class EmailProcessor
       allmail.each do |address|
         elist= List.find_by(address: address)
         elist.users.each do |user|
-          if user.email != email.from 
+          if user.email != email.from && !array.include?(user.email)   
             to<<user.email 
           end
         end
       end  
-      #send mail  
-     	MyMailer.send_email(email.from,to,allmail,email.subject,email.raw_body,email.attachments).deliver 
+      #send mail
+      reply = allmail << email.from  
+     	MyMailer.send_email(email.from,to,reply,email.subject,email.raw_body,email.attachments).deliver 
    end	
   end	
 end
