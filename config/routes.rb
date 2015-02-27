@@ -1,6 +1,13 @@
 Elist::Application.routes.draw do
+  
+  devise_for :users
 
-  resources :users
+  resources :users do 
+    member do 
+      get 'edit_password'
+      post 'update_password'
+    end  
+  end  
   resources :lists
   resources :subscriptions
 

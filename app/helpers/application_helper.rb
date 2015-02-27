@@ -27,4 +27,8 @@ module ApplicationHelper
   def logged_in?
     not request.authorization.nil?
   end
+
+  def is_user_type? user_type
+    (current_user.role.name.to_sym==user_type.to_sym) ? true : false
+  end 
 end

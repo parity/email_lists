@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	before_filter :authenticate
+	before_action :verify_admin, except: [:edit_password,:update_password]
 	
 	def new
    		@user = User.new
@@ -17,6 +17,24 @@ class UsersController < ApplicationController
 	    else
 	    	render 'new'
 	    end
+	end
+
+	def edit_password
+		@user = User.find(params[:id])
+	end	
+
+	def update_password
+		@user= User.find(params[:id])
+		if @user.valid_password?(params[:user][:current_password])
+			if @user.update_attributes({password: params[:user][:password], password_confirmation: params[:user][:password_confirmation]})
+				redirect_to root_url, :notice => "User Password upated successfully"
+			else
+				render 'edit_password'
+			end	
+		else
+			@user.errors.add("current_password", "password does not matched")
+			render 'edit_password'
+		end
 	end
 
 	def edit
@@ -47,7 +65,7 @@ class UsersController < ApplicationController
 	private
 
 		def user_params
-      		params.require(:user).permit(:name, :email)
+      		params.require(:user).permit(:name, :email, :password)
     	end
 
 

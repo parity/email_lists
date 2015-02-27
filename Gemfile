@@ -1,17 +1,18 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.2.0'
 #ruby-gemset=railstutorial_rails_4_0
 
-gem 'rails', '4.0.2'
+gem 'rails', '4.1.5'
 gem 'bootstrap-sass', '2.3.2.0'
 gem 'bcrypt-ruby', '3.1.2'
 gem 'faker', '1.1.2'
 gem 'will_paginate', '3.0.4'
 gem 'will_paginate-bootstrap', '0.2.5'
-gem 'griddler'
+gem 'griddler', '~> 1.1.0'
+# gem 'griddler'
 
 group :development, :test do
-  gem 'sqlite3', '1.3.8'
+  gem 'sqlite3'
   gem 'rspec-rails', '2.13.1'
   # Deploy with Capistrano
   gem 'capistrano' , '2.15.5'
@@ -65,3 +66,7 @@ gem 'rake'
 
 # for ENV variables
 gem 'figaro'
+
+gem 'devise'
+
+gem 'pry'

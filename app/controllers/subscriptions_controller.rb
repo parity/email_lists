@@ -1,5 +1,5 @@
 class SubscriptionsController < ApplicationController
-	before_filter :authenticate
+	before_action :authenticate_user!, :verify_admin
 	
 	def new
    		@subscription = Subscription.new

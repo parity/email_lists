@@ -15,13 +15,13 @@
   <body>    
   	<div class="container">
       <div>
-        <% if logged_in? %>
-          <p class="text-success pull-right"> Admin mode </p>
-        <% else %>  
-          <p class="text-danger pull-right">Guest mode</p>
-        <% end %>
+        <%# if logged_in? %>
+          <!-- <p class="text-success pull-right"> Admin mode </p> -->
+        <%# else %>  
+          <!-- <p class="text-danger pull-right">Guest mode</p> -->
+        <%# end %>
       </div>
-    <%= flash_messages %>
+    <%= flash_messages %>      
     <%= yield %>    
     </div>
 
