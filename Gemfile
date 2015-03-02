@@ -66,7 +66,5 @@ gem 'rake'
 
 # for ENV variables
 gem 'figaro'
-
 gem 'devise'
-
 gem 'pry'
