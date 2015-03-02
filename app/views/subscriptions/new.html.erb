@@ -7,13 +7,13 @@
       <div class="form-group">
       <%= f.label :user_id %>
       <% options = options_from_collection_for_select(@users.order("name ASC"), 'id', 'name') %>
-	  <%= f.select :user_id,  options %>
+	  <%= f.select :user_id,  options, required: true %>
       </div>
 
       <div class="form-group">
       <%= f.label :list_id %>
       <% options = options_from_collection_for_select(@lists.order("name ASC"), 'id', 'name') %>
-	  <%= f.select :list_id,  options %>
+	  <%= f.select :list_id,  options, required: true %>
       </div>
 
       <%= f.submit "Create New Subscription", class: "btn btn-large btn-primary" %>

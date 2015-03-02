@@ -6,17 +6,17 @@
 
       <div class="form-group">
       <%= f.label :name %>
-      <%= f.text_field :name, class: "form-control"  %>
+      <%= f.text_field :name, class: "form-control", required: true  %>
       </div>
 
       <div class="form-group">
       <%= f.label :description %>
-      <%= f.text_field :description, class: "form-control"  %>
+      <%= f.text_field :description, class: "form-control", required: true  %>
       </div>
 
       <div class="form-group">
       <%= f.label :address %>
-      <%= f.text_field :address, class: "form-control" %>
+      <%= f.text_field :address, class: "form-control", required: true %>
       </div>
 
       <%= f.submit "Create New List", class: "btn btn-large btn-primary" %>
