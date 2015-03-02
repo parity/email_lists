@@ -8,18 +8,18 @@ class User < ActiveRecord::Base
 
 	has_many :subscriptions, dependent: :destroy
 	has_many :lists, :through => :subscriptions		
-	validates :name, presence: true,  length: { maximum: 50 }
+	validates :name, presence: true,  length: {maximum: 50 }
 
 	belongs_to :role
 	before_save :set_role
-	before_validation :set_password, on: :create
+	before_validation :set_password , on: :create
 
 	def set_role
 		self.role_id=Role.find_or_create_by(name: "user").id
 	end	
 
 	def set_password
-		self.password="#{self.name.split(" ").first}_12345"
+		self.password="#{self.name.split(" ").first}_1234567"
 	end	
 end
 
