@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 	validates :name, presence: true,  length: { maximum: 50 }
 
 	belongs_to :role
-	# before_save :set_role
+	before_save :set_role
 	before_validation :set_password, on: :create
 
 	def set_role
@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
 	end	
 
 	def set_password
-		self.password=self.email
+		self.password="#{self.name.split(" ").first}_12345"
 	end	
 end
 
