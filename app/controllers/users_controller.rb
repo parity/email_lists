@@ -12,7 +12,7 @@ class UsersController < ApplicationController
  	def create
 	    @user = User.new(user_params)
 	    if @user.save 	    	
-	    	flash[:success] = "New User Created, hence the User Information."
+	    	flash[:success] = "New User Created, hence the User Information. User password is: firstname_1234567"
 	    	redirect_to @user
 	    else
 	    	render 'new'
