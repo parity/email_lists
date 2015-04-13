@@ -7,7 +7,7 @@ Elist::Application.routes.draw do
       get 'edit_password'
       post 'update_password'
     end  
-  end  
+  end
   resources :lists
   resources :subscriptions
 

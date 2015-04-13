@@ -38,16 +38,15 @@ class ListsController < ApplicationController
 	end
 
 	def destroy
-	    List.find(params[:id]).destroy
-	    flash[:success] = "List deleted. Say Goodbye!"
-	    flash[:warning] = "Subcriptions to this list are gone too."
-	    redirect_to lists_url
-  	end
+    List.find(params[:id]).destroy
+    flash[:success] = "List deleted. Say Goodbye!"
+    flash[:warning] = "Subcriptions to this list are gone too."
+    redirect_to lists_url
+	end
 
 	private
 
 		def list_params
-      		params.require(:list).permit(:name, :description, :address)
-    	end
-
+      params.require(:list).permit(:name, :description, :address)
+    end
 end

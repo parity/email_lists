@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    
     <title><%= full_title(yield(:title)) %></title>
-
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-	<%= csrf_meta_tags %>
-
+  	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  	<%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <%= render 'layouts/header' %>    
   </head>
-  <body>    
+  <body>
+    <%= render 'layouts/header' %>
   	<div class="container">
       <div>
         <%# if logged_in? %>
@@ -21,11 +17,9 @@
           <!-- <p class="text-danger pull-right">Guest mode</p> -->
         <%# end %>
       </div>
-    <%= flash_messages %>      
-    <%= yield %>    
+      <%= flash_messages %>
+      <%= yield %>
     </div>
-
-    <%= render 'layouts/footer' %>  
+    <%= render 'layouts/footer' %>
   </body>
 </html>
-

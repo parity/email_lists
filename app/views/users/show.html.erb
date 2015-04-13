@@ -1,19 +1,14 @@
 <% provide(:title, 'User information') %>
 <h1>User Information</h1>
 <%= link_to "edit", edit_user_path, class: "text-success" %>
-<%= link_to "delete", user_path, class: "text-danger", method: :delete,
-                                  data: { confirm: "You sure?" } %>
-
-<h3> <%= @user.name %></h3>
-
- <%= @user.email %>
-
- <h3><small><%= @user.subscriptions.count %></small>Subscriptions </h3>
-
- <ol>
+<%= link_to "delete", user_path, class: "text-danger", method: :delete, data: { confirm: "You sure?" } %>
+<h3><%= @user.name %></h3>
+<%= @user.email %>
+<h3><small><%= @user.subscriptions.count %></small>Subscriptions</h3>
+<ol>
 	<% @user.subscriptions.each do |subscription| %>
 		<li>
-		<%=  List.find(subscription.list_id).name %>
+			<%=  List.find(subscription.list_id).name %>
 		</li>
 	<% end %>	
 </ol>

@@ -4,12 +4,6 @@ class MyMailer < ActionMailer::Base
 		attach.each do |attachment| 
 			attachments[attachment.original_filename] = File.read(attachment.tempfile)
 		end
-		mail(	from: from,
-				to: to, 
-				reply_to: reply,
-				subject: subject, 
-				body: body	)
-		
-	end	
-	
+		mail(	from: from, to: to, reply_to: reply, subject: subject, body: body	)
+	end
 end

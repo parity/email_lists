@@ -1,16 +1,16 @@
 <%= provide(:title, 'All Users') %>
 <h1>All Users</h1>
-
+<% if @users.any? %>
 <%= will_paginate %>
-
 <ol>
 	<% @users.each do |user| %>
 		<li>
-		<%= link_to user.name, user %>
-		<%= link_to "delete", user,class: "text-danger", method: :delete,
-                                  data: { confirm: "You sure?" } %>
+			<%= link_to user.name, user %>
+			<%= link_to "delete", user,class: "text-danger", method: :delete, data: { confirm: "You sure?" } %>
 		</li>
 	<% end %>	
 </ol>
-
 <%= will_paginate%>
+<% else %>
+	<span>User not found!</span>
+<% end %>

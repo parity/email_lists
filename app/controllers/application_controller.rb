@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def verify_admin
-    unless is_user_type? :admin
+    unless admin?
       flash[:error] = "Accesss Denied"
       redirect_to root_url
     end

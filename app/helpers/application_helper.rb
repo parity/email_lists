@@ -28,7 +28,7 @@ module ApplicationHelper
     not request.authorization.nil?
   end
 
-  def is_user_type? user_type
-    (current_user.role.name.to_sym==user_type.to_sym) ? true : false
+  def admin?
+    (current_user.role.name=="admin") ? true : false
   end 
 end
