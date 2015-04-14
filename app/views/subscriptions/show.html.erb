@@ -3,5 +3,5 @@
 <%= link_to "delete", subscription_path, class: "text-danger", method: :delete, data: { confirm: "You sure?" } %>
 <h3><small>user</small> <%= User.find(@subscription.user_id).name %></h3>
 is subscribed to
-<h3><small>list</small> <%= List.find(@subscription.list_id).name %> </h3>
-(<%= List.find(@subscription.list_id).description %>)
+<h3><small>list</small> <%= List.find(@subscription.list_id).name if @subscription.list_id.present?%> </h3>
+(<%= List.find(@subscription.list_id).description if @subscription.list_id.present?%>)

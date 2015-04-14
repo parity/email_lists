@@ -29,6 +29,6 @@ module ApplicationHelper
   end
 
   def admin?
-    (current_user.role.name=="admin") ? true : false
+    current_user && current_user.role?("admin")
   end 
 end

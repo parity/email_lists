@@ -6,7 +6,7 @@
 		<% @subscriptions.each do |subscription| %>
 			<li>
 				<%= link_to User.find(subscription.user_id).name, subscription %> to 
-				<i> <%= List.find(subscription.list_id).name %> </i>
+				<i> <%= List.find(subscription.list_id).name if subscription.list_id.present? %> </i>
 				<%= link_to "delete", subscription,class: "text-danger", method: :delete, data: { confirm: "You sure?" } %>
 			</li>
 		<% end %>

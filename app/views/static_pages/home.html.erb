@@ -1,6 +1,6 @@
 <% provide(:title, 'Home') %>
 <h1>eList</h1>
 <p>Yet Another Simple Mailing List</p>
-<h4>Users: <strong><%= User.all.count %></strong></h4>
+<h4>Users: <strong><%= User.where(role_id: 2).all.count %></strong></h4>
 <h4>Lists: <strong><%= List.all.count %></strong></h4>
 <h4>Subscriptions: <strong><%= Subscription.all.count %></strong></h4>
