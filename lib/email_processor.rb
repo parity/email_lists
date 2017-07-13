@@ -1,9 +1,11 @@
 class EmailProcessor
   def self.process(email)
     @user=User.find_by(email: email.from)
-    if !@user.nil?
-      #simple
-      array = email.to + email.cc       
+    # simple
+    array = (email.to + email.cc + email.bcc).map(&:downcase)  
+    # Hard-coded but who cares :P
+    allowed_email_lists_from_outside = ["hr@paritycube.com", "finance@paritycube.com", "zingoysupport@paritycube.com"]
+    if !@user.nil? || !(array & allowed_email_lists_from_outside).empty?          
       #make union (&) between all list addresses and array to get where to resend   
       allmail=List.all.map(&:address).compact.uniq & array
       #make a list of people to send email
@@ -19,6 +21,6 @@ class EmailProcessor
       #send mail
       reply = allmail << email.from  
      	MyMailer.send_email(email.from,to,reply,email.subject,email.raw_body,email.attachments).deliver 
-   end	
+    end	
   end	
 end
